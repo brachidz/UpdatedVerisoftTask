@@ -1,9 +1,13 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using updateVerisoftTask;
-GeometricObject[] geometricObjects = new GeometricObject[2];
+//GeometricObject[] geometricObjects = new GeometricObject[2];
+Shape[] shapes = new Shape[2];
+//shapes[0] = (Circle)new Circle();
+
+//((Circle)shapes[0]).getArea();
 
 
-for (int i = 0; i < geometricObjects.Length; i++)
+for (int i = 0; i < shapes.Length; i++)
 {
     Console.WriteLine("enter A for circle or B for rectangle");
     string choise = Console.ReadLine();
@@ -22,7 +26,7 @@ for (int i = 0; i < geometricObjects.Length; i++)
                 {
                     fill = false;
                 }
-                geometricObjects[i] = new Circle(radius, color, fill);
+                shapes[i] = new Circle(radius, color, fill);
                 break;
 
             }
@@ -41,7 +45,7 @@ for (int i = 0; i < geometricObjects.Length; i++)
                 {
                     fill = false;
                 }
-                geometricObjects[i] = new Rectangle(width, len, color, fill);
+                shapes[i] = new Rectangle(width, len, color, fill);
                 break;
             }
 
@@ -51,10 +55,40 @@ for (int i = 0; i < geometricObjects.Length; i++)
 
 
 }
-for (int i = 0; i < geometricObjects.Length; i++)
+for (int i = 0; i < shapes.Length; i++)
 {
-    Console.WriteLine(geometricObjects[i]);
-    Console.WriteLine(" perimeter : " + geometricObjects[i].getPerimeter());
-    Console.WriteLine(" area : " + geometricObjects[i].getArea());
+    Console.WriteLine(shapes[i]);
+    if (shapes[i] is  Circle)
+    Console.WriteLine(" area : " + ((Circle)shapes[i]).getArea());
+    else
+        Console.WriteLine(" area : " + ((Rectangle)shapes[i]).getArea());
+    if (shapes[i] is Circle)
+        Console.WriteLine(" peremiter : " + ((Circle)shapes[i]).getPerimeter());
+    else
+        Console.WriteLine(" peremiter : " + ((Rectangle)shapes[i]).getPerimeter());
 
 }
+/*enter A for circle or B for rectangle
+A
+enter a radius
+4
+enter a color
+green
+enter  1 for fiiled 0 for not filled
+1
+enter A for circle or B for rectangle
+B
+enter a width
+3
+enter a length
+2
+enter a color
+red
+enter  1 for fiiled 0 for not filled
+0
+A Circle with radius  of 4  which is a subclass of A shape with color pf green and filled
+ perimeter : 25.132741228718345
+ area: 50.26548245743669
+A rectangle with width :3 and length:2 which is a subclass of A shape with color pf red and  not filled
+ perimeter : 10
+ area: 6*/
