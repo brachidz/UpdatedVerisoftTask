@@ -1,4 +1,5 @@
 ﻿// See https://aka.ms/new-console-template for more information
+
 using updateVerisoftTask;
 Shape[] shapes = new Shape[2];
 
@@ -70,6 +71,7 @@ for (int i = 0; i < shapes.Length; i++)
         Console.WriteLine(" peremiter : " + ((Rectangle)shapes[i]).getPerimeter());
 
 }
+//exemple
 /*enter A for circle or B for rectangle
 A
 enter a radius
