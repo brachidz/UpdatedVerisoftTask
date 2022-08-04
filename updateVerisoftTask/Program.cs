@@ -1,14 +1,13 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using updateVerisoftTask;
-//GeometricObject[] geometricObjects = new GeometricObject[2];
 Shape[] shapes = new Shape[2];
-//shapes[0] = (Circle)new Circle();
 
-//((Circle)shapes[0]).getArea();
 
 
 for (int i = 0; i < shapes.Length; i++)
 {
+    //get parametr from the user and creates the appropriate shape
+    //and puts it in the  shapes array 
     Console.WriteLine("enter A for circle or B for rectangle");
     string choise = Console.ReadLine();
     switch (choise)
@@ -55,6 +54,9 @@ for (int i = 0; i < shapes.Length; i++)
 
 
 }
+//Go over the array and call the functions to calculate area and perimeter
+//By checking the type of each element in the array of shapes (circle or rectangle)
+//and converting it 
 for (int i = 0; i < shapes.Length; i++)
 {
     Console.WriteLine(shapes[i]);
